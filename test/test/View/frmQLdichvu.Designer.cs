@@ -38,6 +38,10 @@
             this.txtGiatri = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -60,10 +64,6 @@
             this.txtTendv = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -201,6 +201,35 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // MaDV
+            // 
+            this.MaDV.DataPropertyName = "MaDV";
+            this.MaDV.HeaderText = "Mã dịch vụ";
+            this.MaDV.Name = "MaDV";
+            this.MaDV.Visible = false;
+            this.MaDV.Width = 50;
+            // 
+            // TenDV
+            // 
+            this.TenDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenDV.DataPropertyName = "TenDV";
+            this.TenDV.HeaderText = "Tên dịch vụ";
+            this.TenDV.Name = "TenDV";
+            // 
+            // GiaDV
+            // 
+            this.GiaDV.DataPropertyName = "GiaDV";
+            this.GiaDV.HeaderText = "Giá dịch vụ (VND)";
+            this.GiaDV.Name = "GiaDV";
+            this.GiaDV.Width = 200;
+            // 
+            // LoaiDV
+            // 
+            this.LoaiDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LoaiDV.DataPropertyName = "LoaiDV";
+            this.LoaiDV.HeaderText = "Loại dịch vụ";
+            this.LoaiDV.Name = "LoaiDV";
+            // 
             // dockManager1
             // 
             this.dockManager1.Form = this;
@@ -330,6 +359,7 @@
             this.cbLoaidv.Size = new System.Drawing.Size(109, 22);
             this.cbLoaidv.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbLoaidv.TabIndex = 42;
+            this.cbLoaidv.TextChanged += new System.EventHandler(this.cbLoaidv_TextChanged);
             // 
             // labelX5
             // 
@@ -425,6 +455,7 @@
             // 
             this.txtGiadv.Border.Class = "TextBoxBorder";
             this.txtGiadv.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtGiadv.Enabled = false;
             this.txtGiadv.Location = new System.Drawing.Point(114, 64);
             this.txtGiadv.Name = "txtGiadv";
             this.txtGiadv.PreventEnterBeep = true;
@@ -467,35 +498,6 @@
             this.labelX3.Size = new System.Drawing.Size(75, 23);
             this.labelX3.TabIndex = 0;
             this.labelX3.Text = "Tên dịch vụ";
-            // 
-            // MaDV
-            // 
-            this.MaDV.DataPropertyName = "MaDV";
-            this.MaDV.HeaderText = "Mã dịch vụ";
-            this.MaDV.Name = "MaDV";
-            this.MaDV.Visible = false;
-            this.MaDV.Width = 50;
-            // 
-            // TenDV
-            // 
-            this.TenDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenDV.DataPropertyName = "TenDV";
-            this.TenDV.HeaderText = "Tên dịch vụ";
-            this.TenDV.Name = "TenDV";
-            // 
-            // GiaDV
-            // 
-            this.GiaDV.DataPropertyName = "GiaDV";
-            this.GiaDV.HeaderText = "Giá dịch vụ (VND)";
-            this.GiaDV.Name = "GiaDV";
-            this.GiaDV.Width = 200;
-            // 
-            // LoaiDV
-            // 
-            this.LoaiDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LoaiDV.DataPropertyName = "LoaiDV";
-            this.LoaiDV.HeaderText = "Loại dịch vụ";
-            this.LoaiDV.Name = "LoaiDV";
             // 
             // frmQLdichvu
             // 

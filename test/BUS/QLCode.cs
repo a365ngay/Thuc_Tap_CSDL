@@ -347,6 +347,21 @@ namespace BUS
                     select tkks;
             return p;
         }
+        public object get_thuephong(string giatri)
+        {
+            var a = from b in db.view_thuephongs select new
+            {
+                TenKH= b.TenKH,
+                NgaySinh = b.NgaySinh,
+                DiaChi = b.DiaChi,
+                Gioitinh = b.Gioitinh,
+                SoDT = b.SoDT,
+                SoCMT = b.SoCMT,
+                TenPhong = b.TenPhong
+            }into x where x.TenKH.Contains(giatri) || x.DiaChi.Contains(giatri) || x.Gioitinh.Contains(giatri) || x.SoDT.Contains(giatri) || x.SoCMT.Contains(giatri) ||
+             x.TenPhong.Contains(giatri) select x;
+            return a;
+        }
         //Khách hàng
         public object get_kh()
         {
@@ -463,7 +478,8 @@ namespace BUS
                      {
                          MaDV = a.MaDV,
                          TenDV = a.TenDV,
-                         GiaDV = a.GiaDV
+                         GiaDV = a.GiaDV,
+                         LoaiDV = a.LoaiDV
                      } into tkks
                      where tkks.MaDV.Contains(giatri) || tkks.TenDV.Contains(giatri) || tkks.GiaDV.ToString().Contains(giatri)
                      select tkks;
@@ -476,16 +492,29 @@ namespace BUS
                      {
                          MaDV = a.MaDV,
                          TenDV = a.TenDV,
-                         GiaDV = a.GiaDV
+                         GiaDV = a.GiaDV,
+                         LoaiDV = a.LoaiDV
                      } into tkks
                      where tkks.GiaDV >= Convert.ToInt32(giatri1) && tkks.GiaDV <= Convert.ToInt32(giatri2)
                      select tkks;
             return dv;
         }
-        public object get_sddv()
+        public object get_sddv(string giatri)
         {
             var dv = from b in db.view_sddvs
-                     select b;
+                     select new
+                     {
+                         MaHD = b.MaHD,
+                         TenKH = b.TenKH,
+                         TenDV = b.TenDV,
+                         SoLuongDV = b.SoLuongDV,
+                         ThanhTien = b.ThanhTien,
+                         TenNV = b.TenNV,
+                         MaKH = b.MaKH,
+                         NgayLapHD = b.NgayLapHD
+                     } into c where c.TenKH.Contains(giatri) || c.TenDV.Contains(giatri) || c.SoLuongDV.ToString().Contains(giatri) || c.ThanhTien.ToString().Contains(giatri) 
+                       || c.TenNV.Contains(giatri) || c.MaKH.Contains(giatri)
+                     select c;
             return dv;
         }
         public int add_sddv(string mahd, string makh, string tendv, string sl, string tien, string tennv, string ngay)

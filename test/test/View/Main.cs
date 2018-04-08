@@ -62,6 +62,7 @@ namespace test
                 btnDatphong.Enabled = false;
                 btnSddv.Enabled = false;
                 btnThanhtoan.Enabled = false;
+                btnBaocaothuephong.Enabled = false;
             }
             else if (_idlogin == "2")
             {
@@ -82,6 +83,7 @@ namespace test
                 btnDatphong.Enabled = true;
                 btnSddv.Enabled = true;
                 btnThanhtoan.Enabled = true;
+                btnBaocaothuephong.Enabled = true;
             }
             else if (_idlogin == "3")
             {
@@ -102,6 +104,7 @@ namespace test
                 btnDatphong.Enabled = true;
                 btnSddv.Enabled = true;
                 btnThanhtoan.Enabled = true;
+                btnBaocaothuephong.Enabled = true;
             }
             else
             {
@@ -122,6 +125,7 @@ namespace test
                 btnDatphong.Enabled = false;
                 btnSddv.Enabled = false;
                 btnThanhtoan.Enabled = false;
+                btnBaocaothuephong.Enabled = false;
             }
         }
 
@@ -346,6 +350,21 @@ namespace test
         private void btnSddv_ItemClick(object sender, ItemClickEventArgs e)
         {
             var form = new frmSddichvu();
+            if (ExistForm(form))
+            {
+                return;
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void btnBackup_ItemClick(object sender, ItemClickEventArgs e)
+        {
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var form = new frmBaocaothuephong();
             if (ExistForm(form))
             {
                 return;
