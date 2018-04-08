@@ -57,6 +57,7 @@
             this.btnDichvu = new DevExpress.XtraBars.BarButtonItem();
             this.btnSddv = new DevExpress.XtraBars.BarButtonItem();
             this.btnThanhtoan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBaocaothuephong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -106,10 +107,11 @@
             this.btnKhachhang,
             this.btnDichvu,
             this.btnSddv,
-            this.btnThanhtoan});
+            this.btnThanhtoan,
+            this.btnBaocaothuephong});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaximumSize = new System.Drawing.Size(0, 500);
-            this.ribbonControl1.MaxItemId = 27;
+            this.ribbonControl1.MaxItemId = 28;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -159,6 +161,8 @@
             this.imgCL1.Images.SetKeyName(32, "33.jpg");
             this.imgCL1.Images.SetKeyName(33, "34.png");
             this.imgCL1.Images.SetKeyName(34, "35.png");
+            this.imgCL1.Images.SetKeyName(35, "36.png");
+            this.imgCL1.Images.SetKeyName(36, "37.png");
             // 
             // btnLogin
             // 
@@ -215,6 +219,7 @@
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBackup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBackup_ItemClick);
             // 
             // btnRestore
             // 
@@ -408,6 +413,17 @@
             this.btnThanhtoan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // btnBaocaothuephong
+            // 
+            this.btnBaocaothuephong.Caption = "Báo cáo thuê phòng";
+            this.btnBaocaothuephong.Id = 27;
+            this.btnBaocaothuephong.ImageIndex = 36;
+            this.btnBaocaothuephong.LargeWidth = 100;
+            this.btnBaocaothuephong.Name = "btnBaocaothuephong";
+            this.btnBaocaothuephong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBaocaothuephong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -472,6 +488,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnDatphong);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnSddv);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThanhtoan);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnBaocaothuephong);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Kiểm soát khách sạn";
             // 
@@ -584,6 +601,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDichvu;
         private DevExpress.XtraBars.BarButtonItem btnSddv;
         private DevExpress.XtraBars.BarButtonItem btnThanhtoan;
+        private DevExpress.XtraBars.BarButtonItem btnBaocaothuephong;
     }
 }
 

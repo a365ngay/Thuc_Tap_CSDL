@@ -169,5 +169,14 @@ namespace test.View
                 dataGridView1.DataSource = db.get_dv();
             }
         }
+
+        private void cbLoaidv_TextChanged(object sender, EventArgs e)
+        {
+            var query4 = (from n in dl.DichVus where n.LoaiDV == cbLoaidv.Text select n.GiaDV).Distinct();
+            foreach (int item1 in query4)
+            {
+                txtGiadv.Text = item1.ToString();
+            }
+        }
     }
 }
